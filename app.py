@@ -525,11 +525,11 @@ def handler(job):
                     logger.warning(f"Failed to remove directory {dir_path}: {str(e)}")
             
             # Delete from S3
-            try:
-                s3.delete_object(Bucket=S3_BUCKET, Key=file_name)
-                logger.info(f"Deleted S3 file: {file_name}")
-            except Exception as e:
-                logger.warning(f"Failed to delete S3 file {file_name}: {str(e)}")
+            # try:
+            #     s3.delete_object(Bucket=S3_BUCKET, Key=file_name)
+            #     logger.info(f"Deleted S3 file: {file_name}")
+            # except Exception as e:
+            #     logger.warning(f"Failed to delete S3 file {file_name}: {str(e)}")
             
             gc.collect()
         
